@@ -1,6 +1,5 @@
 let endDate = Date.UTC(2021, 8, 16, 4);
 let timerElement = document.getElementById('timer');
-let daysElement = document.getElementById('days');
 let year, month, day, hour, minute, second;
 let daysLeft;
 let timeLeft, timeLeftString;
@@ -27,7 +26,7 @@ function formatTime(){
     minute = minute < 10 ? `0${minute}` : minute;
     second = second < 10 ? `0${second}` : second;
 
-    timeLeftString = `${hour}:${minute}:${second}`;
+    timeLeftString = `${daysLeft}d ${hour}h ${minute}m ${second}s`;
 }
 
 function setTime(){
@@ -40,7 +39,6 @@ function setTime(){
     }
     else{
         formatTime();
-        daysElement.textContent = daysLeft;
         timerElement.textContent = timeLeftString;
     }
 }
